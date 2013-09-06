@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Hierarchical Clustering Visualised</title>
+   </head>
+   <body>
+
+      <table>
+         <tr>
+            <td rowspan=4>
+            <canvas id="canvas" width="400" height="400"></canvas>
+            </td>
+            <td>
+              2 <input type=range  id="n_slider" min=2 max =400 step= 1 value=30 onChange="update_n(this.value);"> 400
+              <input type=button id="random_button" value="Place 30 dots randomly">		
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <input type=button id="choice_button" value="choose where to put dots">			
+            </td>
+         </tr>
+         <tr>
+            <td>
+               0 <input type=range id="k_slider" min=0 max =1 step= 0.01 value=0 onChange="update_k(this.value);"> 1
+<!--3 spaces--> &#160;&#160;&#160;Set the parameter k that defines the distance between two clusters. If you take the cartesian product of all dots in cluster A and all dots of cluster B you get (a,b)-tuples. Aligned by their distance d(a,b), k depicts a quantile on them.</br>Long story short:</br>k=0: the distance of two clusters is the distance of their closest points.</br>
+k=1: the distance of two clusters is the distance of their farthest points.</td>
+         </tr>
+         <tr>
+            <td>
+               <input type=button id="step_button"   value="step">
+	       <input type=button id="back_button"   value="back">
+                less/more clusters 
+            </td>
+         </tr>
+      </table>
+      <script src="scripts/canvasEvents.js" type="text/javascript"></script>
+      <script src="scripts/canvas.js"       type="text/javascript"></script>
+      <script src="scripts/model.js"        type="text/javascript"></script>
+      <script src="scripts/script.js"       type="text/javascript"></script>
+      <noscript>javascript needs to be enabled</noscript> 
+   </body>
+</html>
